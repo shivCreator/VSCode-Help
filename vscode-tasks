@@ -1,0 +1,23 @@
+
+Run Task With Ctrl+Shift+B
+ 
+schema description at https://code.visualstudio.com/Docs/editor/tasks
+// put tasks inside "tasks":[] in tasks.json, created from configure tasks
+{
+            "label": "Task Name",
+            "type": "shell",                     // or process for running arbitrary commands or programs",
+            "command": "./scripts/test.sh",      // commond or script location
+            "windows": {
+              "command": ".\\scripts\\test.cmd"  // windows specific parameters
+            },
+            "group": "test",                     // What group the task will appear in, test,build,..
+                   or
+            "group": {
+                "kind": "build",                 // Appears in Build-Tasks
+                "isDefault": true                // Default task to run
+            }
+            "presentation": {                    // defines how output is handled
+              "reveal": "always",                // always shows the output window
+              "panel": "new"                     // new terminal is created on every task run
+            }
+}
