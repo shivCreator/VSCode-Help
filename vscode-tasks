@@ -21,3 +21,18 @@ schema description at https://code.visualstudio.com/Docs/editor/tasks
               "panel": "new"                     // new terminal is created on every task run
             }
 }
+
+// Java Build task
+{
+            "label": "Java Build",
+            "type": "shell",
+            "command": "javac ${fileBasename} && java ${fileBasenameNoExtension}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+              "reveal": "always",
+              "panel": "new"
+            }
+}
